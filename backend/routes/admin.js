@@ -6,6 +6,7 @@ const { getVerifiedPredictions, verifyPrediction } = require('../controllers/pre
 const { getUserSubscriptionPlans, createUserSubscriptionPlan, updateUserSubscriptionPlan, deleteUserSubscriptionPlan } = require('../controllers/userSubscriptionPlanController');
 const { getConfiguration, createConfiguration, updateConfiguration, deleteConfiguration } = require('../controllers/configurationController');
 const { getAllPicks, searchPicks } = require('../controllers/pickController');
+const { getSelfVerifiedPicks, updateSelfVerifiedPick } = require('../controllers/selfVerifiedPickController');
 
 // Rutas de Gestión de Usuarios
 router.get('/users', getUsers);
@@ -41,5 +42,9 @@ router.delete('/configurations/:id', deleteConfiguration);
 // Rutas de Picks
 router.get('/picks', getAllPicks);
 router.get('/picks/search/:query', searchPicks);
+
+// Rutas de Picks Autoverificados
+router.get('/self-verified-picks', getSelfVerifiedPicks);
+router.put('/self-verified-picks/:id', updateSelfVerifiedPick);
 
 module.exports = router;
