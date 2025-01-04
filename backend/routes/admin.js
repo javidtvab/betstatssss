@@ -7,6 +7,7 @@ const { getUserSubscriptionPlans, createUserSubscriptionPlan, updateUserSubscrip
 const { getConfiguration, createConfiguration, updateConfiguration, deleteConfiguration } = require('../controllers/configurationController');
 const { getAllPicks, searchPicks } = require('../controllers/pickController');
 const { getSelfVerifiedPicks, updateSelfVerifiedPick } = require('../controllers/selfVerifiedPickController');
+const { getApiConfiguration, createApiConfiguration, updateApiConfiguration, deleteApiConfiguration } = require('../controllers/apiConfigurationController');
 
 // Rutas de Gestión de Usuarios
 router.get('/users', getUsers);
@@ -46,5 +47,11 @@ router.get('/picks/search/:query', searchPicks);
 // Rutas de Picks Autoverificados
 router.get('/self-verified-picks', getSelfVerifiedPicks);
 router.put('/self-verified-picks/:id', updateSelfVerifiedPick);
+
+// Rutas de Configuración de API
+router.get('/api-configuration', getApiConfiguration);
+router.post('/api-configuration', createApiConfiguration);
+router.put('/api-configuration/:id', updateApiConfiguration);
+router.delete('/api-configuration/:id', deleteApiConfiguration);
 
 module.exports = router;
