@@ -5,6 +5,7 @@ const { getSalesStatistics } = require('../controllers/statisticsController');
 const { getVerifiedPredictions, verifyPrediction } = require('../controllers/predictionController');
 const { getUserSubscriptionPlans, createUserSubscriptionPlan, updateUserSubscriptionPlan, deleteUserSubscriptionPlan } = require('../controllers/userSubscriptionPlanController');
 const { getConfiguration, createConfiguration, updateConfiguration, deleteConfiguration } = require('../controllers/configurationController');
+const { getAllPicks, searchPicks } = require('../controllers/pickController');
 
 // Rutas de Gestión de Usuarios
 router.get('/users', getUsers);
@@ -36,5 +37,9 @@ router.get('/configurations', getConfiguration);
 router.post('/configurations', createConfiguration);
 router.put('/configurations/:id', updateConfiguration);
 router.delete('/configurations/:id', deleteConfiguration);
+
+// Rutas de Picks
+router.get('/picks', getAllPicks);
+router.get('/picks/search/:query', searchPicks);
 
 module.exports = router;
