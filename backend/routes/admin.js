@@ -9,6 +9,7 @@ const { getAllPicks, searchPicks } = require('../controllers/pickController');
 const { getSelfVerifiedPicks, updateSelfVerifiedPick } = require('../controllers/selfVerifiedPickController');
 const { getApiConfiguration, createApiConfiguration, updateApiConfiguration, deleteApiConfiguration } = require('../controllers/apiConfigurationController');
 const { getPaymentGatewayConfiguration, createPaymentGatewayConfiguration, updatePaymentGatewayConfiguration, deletePaymentGatewayConfiguration } = require('../controllers/paymentGatewayConfigurationController');
+const { getCoupons, createCoupon, updateCoupon, deleteCoupon } = require('../controllers/couponController');
 
 // Rutas de Gestión de Usuarios
 router.get('/users', getUsers);
@@ -60,5 +61,11 @@ router.get('/payment-gateway-configuration', getPaymentGatewayConfiguration);
 router.post('/payment-gateway-configuration', createPaymentGatewayConfiguration);
 router.put('/payment-gateway-configuration/:id', updatePaymentGatewayConfiguration);
 router.delete('/payment-gateway-configuration/:id', deletePaymentGatewayConfiguration);
+
+// Rutas de Gestión de Cupones de Descuento
+router.get('/coupons', getCoupons);
+router.post('/coupons', createCoupon);
+router.put('/coupons/:id', updateCoupon);
+router.delete('/coupons/:id', deleteCoupon);
 
 module.exports = router;
