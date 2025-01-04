@@ -3,6 +3,7 @@ import UserManagement from './UserManagement';
 import SubscriptionPlans from './SubscriptionPlans';
 import SalesStatistics from './SalesStatistics';
 import VerifyPredictions from './VerifyPredictions';
+import UserSubscriptionPlans from './UserSubscriptionPlans';
 
 const AdminDashboard = () => {
   return (
@@ -13,6 +14,7 @@ const AdminDashboard = () => {
         <SubscriptionPlans />
         <SalesStatistics />
         <VerifyPredictions />
+        <UserSubscriptionPlans />
         {/* Añadir otros componentes aquí */}
       </div>
     </div>
