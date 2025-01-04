@@ -2,6 +2,7 @@ import React from 'react';
 import UserManagement from './UserManagement';
 import SubscriptionPlans from './SubscriptionPlans';
 import SalesStatistics from './SalesStatistics';
+import VerifyPredictions from './VerifyPredictions';
 
 const AdminDashboard = () => {
   return (
@@ -11,6 +12,7 @@ const AdminDashboard = () => {
         <UserManagement />
         <SubscriptionPlans />
         <SalesStatistics />
+        <VerifyPredictions />
         {/* Añadir otros componentes aquí */}
       </div>
     </div>
