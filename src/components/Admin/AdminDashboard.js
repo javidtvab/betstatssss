@@ -9,6 +9,7 @@ import Picks from './Picks';
 import SelfVerifiedPicks from './SelfVerifiedPicks';
 import ApiConfiguration from './ApiConfiguration';
 import PaymentGatewayConfiguration from './PaymentGatewayConfiguration';
+import Coupons from './Coupons';
 
 const AdminDashboard = () => {
   return (
@@ -25,6 +26,7 @@ const AdminDashboard = () => {
         <SelfVerifiedPicks />
         <ApiConfiguration />
         <PaymentGatewayConfiguration />
+        <Coupons />
         {/* Añadir otros componentes aquí */}
       </div>
     </div>
