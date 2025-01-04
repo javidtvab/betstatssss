@@ -4,6 +4,7 @@ const { getPlans, createPlan, updatePlan, deletePlan } = require('../controllers
 const { getSalesStatistics } = require('../controllers/statisticsController');
 const { getVerifiedPredictions, verifyPrediction } = require('../controllers/predictionController');
 const { getUserSubscriptionPlans, createUserSubscriptionPlan, updateUserSubscriptionPlan, deleteUserSubscriptionPlan } = require('../controllers/userSubscriptionPlanController');
+const { getConfiguration, createConfiguration, updateConfiguration, deleteConfiguration } = require('../controllers/configurationController');
 
 // Rutas de Gestión de Usuarios
 router.get('/users', getUsers);
@@ -29,5 +30,11 @@ router.get('/user-subscription-plans', getUserSubscriptionPlans);
 router.post('/user-subscription-plans', createUserSubscriptionPlan);
 router.put('/user-subscription-plans/:id', updateUserSubscriptionPlan);
 router.delete('/user-subscription-plans/:id', deleteUserSubscriptionPlan);
+
+// Rutas de Configuración
+router.get('/configurations', getConfiguration);
+router.post('/configurations', createConfiguration);
+router.put('/configurations/:id', updateConfiguration);
+router.delete('/configurations/:id', deleteConfiguration);
 
 module.exports = router;
