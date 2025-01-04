@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
+  profilePhoto: { type: String }, // URL de la foto de perfil
   password: { type: String, required: true },
   isBlocked: { type: Boolean, default: false },
-  role: { type: String, enum: ['basic', 'premium'], default: 'basic' },
+  role: { type: String, enum: ['basic', 'premium', 'admin'], default: 'basic' },
   // Campos adicionales para usuarios premium
   botAccess: { type: Boolean, default: false },
   enhancedStatistics: { type: Boolean, default: false },
