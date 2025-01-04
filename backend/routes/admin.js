@@ -8,6 +8,7 @@ const { getConfiguration, createConfiguration, updateConfiguration, deleteConfig
 const { getAllPicks, searchPicks } = require('../controllers/pickController');
 const { getSelfVerifiedPicks, updateSelfVerifiedPick } = require('../controllers/selfVerifiedPickController');
 const { getApiConfiguration, createApiConfiguration, updateApiConfiguration, deleteApiConfiguration } = require('../controllers/apiConfigurationController');
+const { getPaymentGatewayConfiguration, createPaymentGatewayConfiguration, updatePaymentGatewayConfiguration, deletePaymentGatewayConfiguration } = require('../controllers/paymentGatewayConfigurationController');
 
 // Rutas de Gestión de Usuarios
 router.get('/users', getUsers);
@@ -53,5 +54,11 @@ router.get('/api-configuration', getApiConfiguration);
 router.post('/api-configuration', createApiConfiguration);
 router.put('/api-configuration/:id', updateApiConfiguration);
 router.delete('/api-configuration/:id', deleteApiConfiguration);
+
+// Rutas de Configuración de Pasarelas de Pago
+router.get('/payment-gateway-configuration', getPaymentGatewayConfiguration);
+router.post('/payment-gateway-configuration', createPaymentGatewayConfiguration);
+router.put('/payment-gateway-configuration/:id', updatePaymentGatewayConfiguration);
+router.delete('/payment-gateway-configuration/:id', deletePaymentGatewayConfiguration);
 
 module.exports = router;
