@@ -3,6 +3,7 @@ const { getUsers, createUser, updateUser, deleteUser } = require('../controllers
 const { getPlans, createPlan, updatePlan, deletePlan } = require('../controllers/planController');
 const { getSalesStatistics } = require('../controllers/statisticsController');
 const { getVerifiedPredictions, verifyPrediction } = require('../controllers/predictionController');
+const { getUserSubscriptionPlans, createUserSubscriptionPlan, updateUserSubscriptionPlan, deleteUserSubscriptionPlan } = require('../controllers/userSubscriptionPlanController');
 
 // Rutas de Gestión de Usuarios
 router.get('/users', getUsers);
@@ -22,5 +23,11 @@ router.get('/sales-statistics', getSalesStatistics);
 // Rutas de Verificación de Pronósticos
 router.get('/predictions/verified', getVerifiedPredictions);
 router.put('/predictions/verify/:id', verifyPrediction);
+
+// Rutas de Configuración de Planes de Suscripción de Usuarios
+router.get('/user-subscription-plans', getUserSubscriptionPlans);
+router.post('/user-subscription-plans', createUserSubscriptionPlan);
+router.put('/user-subscription-plans/:id', updateUserSubscriptionPlan);
+router.delete('/user-subscription-plans/:id', deleteUserSubscriptionPlan);
 
 module.exports = router;
