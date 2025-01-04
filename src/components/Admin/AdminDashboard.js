@@ -6,6 +6,7 @@ import VerifyPredictions from './VerifyPredictions';
 import UserSubscriptionPlans from './UserSubscriptionPlans';
 import Customization from './Customization';
 import Picks from './Picks';
+import SelfVerifiedPicks from './SelfVerifiedPicks';
 
 const AdminDashboard = () => {
   return (
@@ -19,6 +20,7 @@ const AdminDashboard = () => {
         <UserSubscriptionPlans />
         <Customization />
         <Picks />
+        <SelfVerifiedPicks />
         {/* Añadir otros componentes aquí */}
       </div>
     </div>
