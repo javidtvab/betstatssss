@@ -25,5 +25,12 @@ const userSchema = new mongoose.Schema({
   telegramChannel: { type: String }, // Nombre o ID del canal de Telegram
   telegramBotToken: { type: String }, // Token del bot de Telegram
 }, { timestamps: true });
-
+// Hash the password before saving the user
+userSchema.pre('save', async function (next) {
+  if (this.isModified('password') || this.isNew) {
+    const hash = await bcrypt.hash(this.password, 10);
+    this.password = hash;
+  }
+  next();
+});
 module.exports = mongoose.model('User', userSchema);
