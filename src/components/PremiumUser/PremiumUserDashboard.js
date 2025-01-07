@@ -3,6 +3,7 @@ import PremiumProfile from './premiumProfile';
 import PicksList from './PicksList';
 import Statistics from './Statistics';
 import CreatePick from './CreatePick'; // Componente de creación de picks para usuarios premium
+import MySales from './MySales'; // Componente de mis ventas
 import PendingPicks from '../User/PendingPicks'; // Reutilizamos el componente de picks pendientes
 
 const PremiumUserDashboard = () => {
@@ -15,6 +16,7 @@ const PremiumUserDashboard = () => {
         <PicksList />
         <Statistics />
         <PendingPicks />
+        <MySales />
       </div>
     </div>
   );
