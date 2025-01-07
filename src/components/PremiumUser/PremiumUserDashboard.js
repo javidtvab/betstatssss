@@ -5,6 +5,7 @@ import Statistics from './Statistics';
 import CreatePick from './CreatePick'; // Componente de creación de picks para usuarios premium
 import MySales from './MySales'; // Componente de mis ventas
 import ConfigureTelegram from './ConfigureTelegram'; // Componente de configuración de Telegram
+import AdvancedStatistics from './AdvancedStatistics'; // Componente de estadísticas avanzadas
 import PendingPicks from '../User/PendingPicks'; // Reutilizamos el componente de picks pendientes
 
 const PremiumUserDashboard = () => {
@@ -19,6 +20,7 @@ const PremiumUserDashboard = () => {
         <PendingPicks />
         <MySales />
         <ConfigureTelegram />
+        <AdvancedStatistics />
       </div>
     </div>
   );
