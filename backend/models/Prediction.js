@@ -5,9 +5,10 @@ const predictionSchema = new mongoose.Schema({
   description: { type: String, required: true },
   stake: { type: Number, required: true },
   odds: { type: Number, required: true },
-  status: { type: String, enum: ['pending', 'won', 'lost', 'void', 'cancelled', 'closed'], default: 'pending' },
-  units: { type: Number, default: 0 },
-  date: { type: Date, default: Date.now }
-});
+  sport: { type: String, required: true },
+  date: { type: Date, default: Date.now },
+  status: { type: String, enum: ['pending', 'won', 'lost', 'void', 'null', 'closed'], default: 'pending' },
+  units: { type: Number, default: 0 }, // Unidades ganadas o perdidas
+}, { timestamps: true });
 
 module.exports = mongoose.model('Prediction', predictionSchema);
