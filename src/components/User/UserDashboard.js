@@ -3,6 +3,7 @@ import Profile from './Profile';
 import PicksList from './PicksList';
 import UserStatistics from './UserStatistics';
 import CreatePick from './CreatePick';
+import PendingPicks from './PendingPicks';
 
 const UserDashboard = () => {
   return (
@@ -13,6 +14,7 @@ const UserDashboard = () => {
         <CreatePick />
         <PicksList />
         <UserStatistics />
+        <PendingPicks />
         {/* Añadir otros componentes aquí */}
       </div>
     </div>
