@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../models/basicUser');
 const { uploadFile } = require('../utils/s3'); // Suponiendo que usaremos AWS S3 para almacenar las fotos de perfil
 
 // Obtener el perfil del usuario
