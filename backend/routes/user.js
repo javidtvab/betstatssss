@@ -1,19 +1,15 @@
-const router = require('express').Router();
-const { getProfile, updateProfile } = require('../controllers/userController');
-const { getUserPicks, getUserStatistics } = require('../controllers/userStatisticsController');
-const { createPick } = require('../controllers/userPickController');
-const upload = require('../middleware/upload');
-const auth = require('../middleware/auth'); // Middleware de autenticación
+const mongoose = require('mongoose');
 
-// Rutas de perfil
-router.get('/profile', auth, getProfile);
-router.put('/profile', auth, upload.single('profilePhoto'), updateProfile);
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  isBlocked: { type: Boolean, default: false },
+  role: { type: String, enum: ['basic', 'premium'], default: 'basic' },
+  // Campos adicionales para usuarios premium
+  botAccess: { type: Boolean, default: false },
+  enhancedStatistics: { type: Boolean, default: false },
+  extendedProfile: { type: Boolean, default: false },
+}, { timestamps: true });
 
-// Rutas de estadísticas
-router.get('/picks', auth, getUserPicks);
-router.get('/statistics', auth, getUserStatistics);
-
-// Rutas de creación de picks
-router.post('/picks', auth, upload.single('photo'), createPick);
-
-module.exports = router;
+module.exports = mongoose.model('User', userSchema);
