@@ -17,6 +17,7 @@ const predictionSchema = new mongoose.Schema({
   event: { type: String }, // Evento para pre-match
   argument: { type: String }, // Argumento para pre-match
   league: { type: String }, // Liga para pre-match (opcional)
+  bookie: { type: String }, // Casa de apuestas utilizada
 }, { timestamps: true });
 
 module.exports = mongoose.model('Prediction', predictionSchema);
