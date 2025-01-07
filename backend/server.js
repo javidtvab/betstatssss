@@ -13,6 +13,10 @@ app.use(express.json());
 const adminRoutes = require('./routes/admin');
 app.use('/admin', adminRoutes);
 
+// Ruta de Configuración Inicial
+const initialSetupRoutes = require('./routes/initialSetup');
+app.use('/api', initialSetupRoutes);
+
 // Conectar a MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
