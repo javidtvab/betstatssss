@@ -4,6 +4,7 @@ const { getUserPicks, getUserStatistics } = require('../controllers/premiumUserS
 const { createPick } = require('../controllers/premiumUserPickController');
 const { getSoldSubscriptions, getSoldPicks } = require('../controllers/premiumUserSalesController');
 const { configureTelegram } = require('../controllers/telegramController');
+const { getAdvancedStatistics } = require('../controllers/advancedStatisticsController');
 const upload = require('../middleware/upload');
 const auth = require('../middleware/auth'); // Middleware de autenticación
 
@@ -24,5 +25,8 @@ router.get('/sales/picks', auth, getSoldPicks);
 
 // Rutas de configuración de Telegram
 router.put('/configure-telegram', auth, configureTelegram);
+
+// Rutas de estadísticas avanzadas
+router.get('/advanced-statistics', auth, getAdvancedStatistics);
 
 module.exports = router;
