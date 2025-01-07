@@ -2,7 +2,7 @@ import React from 'react';
 import PremiumProfile from './premiumProfile';
 import PicksList from './PicksList';
 import Statistics from './Statistics';
-import CreatePick from '../User/CreatePick'; // Reutilizamos el componente de creación de picks
+import CreatePick from './CreatePick'; // Componente de creación de picks para usuarios premium
 import PendingPicks from '../User/PendingPicks'; // Reutilizamos el componente de picks pendientes
 
 const PremiumUserDashboard = () => {
